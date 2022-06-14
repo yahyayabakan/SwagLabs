@@ -3,7 +3,7 @@ package com.SwagLabs.utilities;
 import java.io.FileInputStream;
 import java.util.Properties;
 
-public class ConfigurationRedar {
+public class ConfigurationReader {
     private static Properties properties;
 
     static {
