@@ -25,4 +25,10 @@ public class LoginPage {
         driver().get("https://www.saucedemo.com/");
     }
 
+    public void enterCredentials(String userName, String password){
+        usernameInput.sendKeys(userName);
+        passwordInput.sendKeys(password);
+        loginButton.sendKeys();
+    }
+
 }
