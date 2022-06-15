@@ -5,10 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import static com.SwagLabs.utilities.Driver.driver;
+
 public class LoginPage {
 
     public LoginPage(){
-        PageFactory.initElements(Driver.driver(), this);
+        PageFactory.initElements(driver(), this);
     }
     @FindBy(id="user-name")
     public WebElement usernameInput;
@@ -19,5 +21,8 @@ public class LoginPage {
     @FindBy(xpath="//h3[contains(text(),'Epic sadface: Sorry, this user has been locked out.')]")
     public WebElement errorMessage;
 
+    public  void navigateToLoginPage(){
+        driver().get("https://www.saucedemo.com/");
+    }
 
 }
