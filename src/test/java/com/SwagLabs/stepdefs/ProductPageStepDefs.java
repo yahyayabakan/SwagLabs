@@ -10,7 +10,6 @@ public class ProductPageStepDefs {
         this.contextState = contextState;
     }
 
-
     @Then("user adds {string} product to cart")
     public void user_adds_product_to_cart(String string) {
         // Write code here that turns the phrase above into concrete actions
