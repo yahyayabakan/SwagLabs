@@ -3,7 +3,7 @@ package com.SwagLabs.stepdefs;
 import com.SwagLabs.pages.ContextState;
 import io.cucumber.java.en.Then;
 
-public class ProductPageStepDefs {
+public class ProductPageStepDefs{
     private ContextState contextState;
 
     public ProductPageStepDefs(ContextState contextState){
@@ -11,19 +11,16 @@ public class ProductPageStepDefs {
     }
 
     @Then("user adds {string} product to cart")
-    public void user_adds_product_to_cart(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void user_adds_product_to_cart(String item) {
+        contextState.homePage().addToCart(item);
     }
     @Then("user clicks cart button")
     public void user_clicks_cart_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        contextState.homePage().clickCart();
     }
     @Then("{string} product  should be listed with correct price")
-    public void product_should_be_listed_with_correct_price(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void product_should_be_listed_with_correct_price(String item) {
+        System.out.println(contextState.homePage().getPrice(item));
     }
     @Then("user clicks to continue shopping button and navigates back to the products page")
     public void user_clicks_to_continue_shopping_button_and_navigates_back_to_the_products_page() {
