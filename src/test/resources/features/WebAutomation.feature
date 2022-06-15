@@ -12,7 +12,7 @@ Feature: Add item to cart
     And user adds "Sauce Labs Bike Light" product to cart
     And user clicks cart button
     And user clicks checkout button
-    And user populates First Name "John", Last Name "Lock" and Zip/Postal Code "NE83PU"
+    And user populates First Name "John", Last Name "Lock" and ZipPostal Code "NE83PU"
     And user clicks continue button
     Then total price of items in cart should be correct
     Then user clicks finish button and receives "THANK YOU FOR YOUR ORDER" notification

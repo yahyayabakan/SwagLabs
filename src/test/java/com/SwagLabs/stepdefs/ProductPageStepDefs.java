@@ -1,8 +1,15 @@
 package com.SwagLabs.stepdefs;
 
+import com.SwagLabs.pages.ContextState;
 import io.cucumber.java.en.Then;
 
 public class ProductPageStepDefs {
+    private ContextState contextState;
+
+    public ProductPageStepDefs(ContextState contextState){
+        this.contextState = contextState;
+    }
+
 
     @Then("user adds {string} product to cart")
     public void user_adds_product_to_cart(String string) {
@@ -29,11 +36,7 @@ public class ProductPageStepDefs {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
-    @Then("user populates First Name {string}, Last Name {string} and Zip\\/Postal Code {string}")
-    public void user_populates_first_name_last_name_and_zip_postal_code(String string, String string2, String string3) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+
     @Then("user clicks continue button")
     public void user_clicks_continue_button() {
         // Write code here that turns the phrase above into concrete actions
@@ -59,5 +62,17 @@ public class ProductPageStepDefs {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
+    @Then("user populates First Name {string}, Last Name {string} and ZipPostal Code {string}")
+    public void user_populates_first_name_last_name_and_zip_postal_code(String string, String string2, String string3) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @Then("user should be able to see {string}")
+    public void user_should_be_able_to_see(String string) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
 
 }

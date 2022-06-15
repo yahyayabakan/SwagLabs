@@ -1,10 +1,16 @@
 package com.SwagLabs.stepdefs;
 
+import com.SwagLabs.pages.ContextState;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LoginPageStepDefs {
+    private ContextState contextState;
+
+    public LoginPageStepDefs(ContextState contextState){
+        this.contextState = contextState;
+    }
 
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
