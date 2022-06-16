@@ -21,6 +21,7 @@ public class ProductPageStepDefs extends ContextState{
 
     @Then("user adds {string} product to cart")
     public void user_adds_product_to_cart(String item) {
+        System.out.println("(DEPENDENCY INJECTION) coming from productspagestepdefs " + contextState.common);
         homePage.addToCart(item);
     }
     @Then("user clicks cart button")

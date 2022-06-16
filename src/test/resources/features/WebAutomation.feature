@@ -18,8 +18,8 @@ Feature: Add item to cart
     Then user clicks finish button and receives "THANK YOU FOR YOUR ORDER" notification
     And user clicks open menu button then clicks LOGOUT button
     Then user should be able to logout and directed to the login page
-  @sadFace
-  Scenario:
+
+  Scenario: Login as locked_out_user
     When user enters username "locked_out_user" and "secret_sauce" password
     Then user should be able to see "Epic sadface: Sorry, this user has been locked out."
 

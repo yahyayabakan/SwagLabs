@@ -25,6 +25,7 @@ public class LoginPageStepDefs extends  ContextState{
     }
     @When("user enters username {string} and {string} password")
     public void user_enters_username_and_password(String userName, String password) {
+        System.out.println("(DEPENDENCY INJECTION) coming from loginstepdefs " + contextState.common);
         loginPage.enterCredentials(userName, password);
     }
     @Then("user should be able to logged in and navigated to products page")
