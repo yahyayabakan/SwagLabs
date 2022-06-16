@@ -1,5 +1,6 @@
 package com.SwagLabs.stepdefs;
 import io.cucumber.java.en.And;
+import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
@@ -14,6 +15,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
@@ -68,6 +70,24 @@ public class APIStepDefs {
     }
 
 
+    @When("user posts a person with name {string} and job {string}")
+    public void userPostsAPersonWithNameAndJob(String name, String job) {
+        Map<String, String> newPerson = new HashMap<>();
+        newPerson.put("name",name);
+        newPerson.put("job", job);
 
+        JsonPath jsonPath =
+                given()
+                        .contentType(ContentType.JSON)
+                        .body(newPerson).
+                when()
+                        .post("users").
+                then()
+                        .statusCode(201)
+                        .extract().jsonPath();
+    }
 
+    @And("one person should be created")
+    public void onePersonShouldBeCreated() {
+    }
 }

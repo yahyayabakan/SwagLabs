@@ -14,3 +14,8 @@ Feature: Testing API Calls
   Scenario: User calls web service to get invalid person
     When user retrieves one person id 23
     Then one person status code should be 404
+
+  Scenario: User calls web service to post person
+    When user posts a person with name "morpheus" and job "leader"
+    Then one person status code should be 201
+    And one person should be created
