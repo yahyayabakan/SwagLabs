@@ -27,10 +27,9 @@ public class LoginPage {
 
     public void enterCredentials(String userName, String password){
         usernameInput.sendKeys(userName);
-
         passwordInput.sendKeys(password);
-
         loginButton.click();
+
     }
 
 }
