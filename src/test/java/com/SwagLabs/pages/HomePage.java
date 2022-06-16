@@ -1,6 +1,7 @@
 package com.SwagLabs.pages;
 
 import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,7 +24,7 @@ public class HomePage { public HomePage(){PageFactory.initElements(driver(),this
     public void clickCart(){
         cart.click();
     }
-
+                       
     public String getPrice(String item){
         return driver().findElement(By.xpath("//div[contains(text(),'"+item+"')]//parent::a//parent::div[@class='inventory_item_label']/following-sibling::div/div\n")).getText();
     }
