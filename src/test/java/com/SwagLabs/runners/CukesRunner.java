@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
                 "html:target/default-html-reports"},
         features = "src/test/resources/features",
         glue = "com/SwagLabs/stepdefs",
-        dryRun = false,
+        dryRun = true,
         tags = ""
 )
 public class CukesRunner {
