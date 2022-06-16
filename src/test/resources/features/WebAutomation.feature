@@ -7,7 +7,7 @@ Feature: Add item to cart
     Then user should be able to logged in and navigated to products page
     And user adds "Sauce Labs Backpack" product to cart
     And user clicks cart button
-    Then "Sauce Labs Backpack" product  should be listed with correct price
+    Then "Sauce Labs Backpack" product  should be listed with "$29.99" correct price
     And user clicks to continue shopping button and navigates back to the products page
     And user adds "Sauce Labs Bike Light" product to cart
     And user clicks cart button
