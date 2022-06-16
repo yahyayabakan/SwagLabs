@@ -1,14 +1,10 @@
 package com.SwagLabs.pages;
 
-/*public class ContextState {
-    private HomePage homePage;
-    private LoginPage loginPage;
 
-    public HomePage homePage() {
-        return homePage;
-    }
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-    public LoginPage loginPage() {
-        return loginPage;
-    }
+import java.time.Duration;
+
+public class ContextState {
 }
