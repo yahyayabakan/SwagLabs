@@ -1,6 +1,8 @@
 package com.SwagLabs.pages;
 
 import com.SwagLabs.utilities.Driver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -8,10 +10,8 @@ import org.openqa.selenium.support.PageFactory;
 import static com.SwagLabs.utilities.Driver.driver;
 
 public class LoginPage {
+    public LoginPage(){PageFactory.initElements(driver(),this);}
 
-    public LoginPage(){
-        PageFactory.initElements(driver(), this);
-    }
     @FindBy(id="user-name")
     public WebElement usernameInput;
     @FindBy(id="password")
@@ -27,8 +27,10 @@ public class LoginPage {
 
     public void enterCredentials(String userName, String password){
         usernameInput.sendKeys(userName);
+
         passwordInput.sendKeys(password);
-        loginButton.sendKeys();
+
+        loginButton.click();
     }
 
 }

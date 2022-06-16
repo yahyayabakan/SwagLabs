@@ -1,10 +1,16 @@
 package com.SwagLabs.stepdefs;
 
 import com.SwagLabs.pages.ContextState;
+import com.SwagLabs.pages.HomePage;
+import com.SwagLabs.pages.LoginPage;
 import io.cucumber.java.en.Then;
 
-public class ProductPageStepDefs{
+import static org.junit.Assert.assertTrue;
+
+public class ProductPageStepDefs extends ContextState{
     private ContextState contextState;
+    LoginPage loginPage = new LoginPage();
+    HomePage homePage = new HomePage();
 
     public ProductPageStepDefs(ContextState contextState){
         this.contextState = contextState;
@@ -12,15 +18,15 @@ public class ProductPageStepDefs{
 
     @Then("user adds {string} product to cart")
     public void user_adds_product_to_cart(String item) {
-        contextState.homePage().addToCart(item);
+        homePage.addToCart(item);
     }
     @Then("user clicks cart button")
     public void user_clicks_cart_button() {
-        contextState.homePage().clickCart();
+        homePage.clickCart();
     }
     @Then("{string} product  should be listed with correct price")
     public void product_should_be_listed_with_correct_price(String item) {
-        System.out.println(contextState.homePage().getPrice(item));
+        System.out.println(homePage.getPrice(item));
     }
     @Then("user clicks to continue shopping button and navigates back to the products page")
     public void user_clicks_to_continue_shopping_button_and_navigates_back_to_the_products_page() {
@@ -66,8 +72,7 @@ public class ProductPageStepDefs{
 
     @Then("user should be able to see {string}")
     public void user_should_be_able_to_see(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        assertTrue(loginPage.errorMessage.getText().equals("Epic sadface: Sorry, this user has been locked out."));
     }
 
 
